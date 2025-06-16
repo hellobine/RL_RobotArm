@@ -174,7 +174,7 @@ class Xarm6(MujocoRobotEnv):
   
 if __name__ == "__main__":
         # Créer une instance de la classe Xarm6
-    env = Xarm6(model_path="/home/yoshidalab/Documents/Romain/RL_RobotArm/Xarm6/Xarm6/assets/xarm6_no_gripper.xml", render_mode="human")
+    env = Xarm6(model_path="/home/hello/RL_RobotArm/Xarm6/Xarm6/assets/xarm6_no_gripper.xml", render_mode="human")
 
 
     # Tester l'initialisation de la simulation

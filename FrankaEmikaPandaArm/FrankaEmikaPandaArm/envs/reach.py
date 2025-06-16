@@ -187,7 +187,7 @@ class PandaReachEnv(Panda):
         d = self.goal_distance(achieved_goal, desired_goal)
 
         if log :
-            log_dir = '/home/yoshidalab/Documents/Romain/RL_RobotArm/FrankaEmikaPandaArm/Log'
+            log_dir = '/home/hello/RL_RobotArm/FrankaEmikaPandaArm/Log'
             if not os.path.exists(log_dir):
                 os.makedirs(log_dir)
             with open(os.path.join(log_dir, "distances.txt"), "a") as file:

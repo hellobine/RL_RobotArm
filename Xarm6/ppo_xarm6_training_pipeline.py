@@ -122,21 +122,21 @@ def load_env_and_model(env_name, log_dir):
 if __name__ == "__main__":
     args = parse_args()
 
-    if args.show_spaces:
-        env = create_env(args.env_name)
-        show_spaces(env)
-        env.close()
+    # if args.show_spaces:
+    env = create_env(args.env_name)
+    show_spaces(env)
+    env.close()
 
-    if args.training:
-        env = make_vec_env(args.env_name, n_envs=1)
-        env = VecNormalize(env, norm_obs=True, norm_reward=True, clip_obs=10.0)
-        train_agent(env, args.total_timesteps, args.env_name, args.log_dir, args.checkpoint_freq)
-    
-    if args.evaluate or args.simulation:
-        model, eval_env = load_env_and_model(args.env_name, args.log_dir)
+    # if args.training:
+    env = make_vec_env(args.env_name, n_envs=1)
+    env = VecNormalize(env, norm_obs=True, norm_reward=True, clip_obs=10.0)
+    train_agent(env, args.total_timesteps, args.env_name, args.log_dir, args.checkpoint_freq)
 
-    if args.evaluate:
-        evaluate_agent(model, eval_env)
+    # if args.evaluate or args.simulation:
+    model, eval_env = load_env_and_model(args.env_name, args.log_dir)
 
-    if args.simulation:
-        simulation(model, eval_env)
+    # if args.evaluate:
+    evaluate_agent(model, eval_env)
+
+    # if args.simulation:
+    simulation(model, eval_env)

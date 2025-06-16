@@ -181,7 +181,7 @@ class Xarm6ReachEnv(Xarm6):
         d = self.goal_distance(achieved_goal, desired_goal)
 
         if log :
-            log_dir = '/home/yoshidalab/Documents/Romain/RL_RobotArm/Xarm6/Log/Mujoco_Simulation'
+            log_dir = '/home/hello/RL_RobotArm/Xarm6/Log/Mujoco_Simulation'
             if not os.path.exists(log_dir):
                 os.makedirs(log_dir)
             with open(os.path.join(log_dir, "distances_sim.txt"), "a") as file:
